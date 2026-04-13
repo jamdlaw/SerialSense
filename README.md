@@ -1,9 +1,3 @@
-Since you are using this for a YouTube video and a job portfolio, your README needs to look high-end. It should explain the **"Why"** (the business problem) and the **"How"** (the AI stack).
-
-Here is a professional `README.md` template for **VoltCheck AI**.
-
----
-
 # VoltCheck AI ⚡
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
