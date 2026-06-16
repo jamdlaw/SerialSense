@@ -58,7 +58,7 @@ SerialSense AI allows inspectors to simply snap a photo and send it. The applica
 1. Clone the repository:
    ```bash
    git clone https://github.com/YOUR_USERNAME/SerialSense.git
-   cd SerialSense-AI
+   cd SerialSense
    ```
 2. Install dependencies:
    ```bash
