@@ -1,10 +1,10 @@
-# VoltCheck AI ⚡
+# SerialSense AI ⚡
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stack: MERN](https://img.shields.io/badge/Stack-MERN-blue)](https://www.mongodb.com/mern-stack)
 [![AI: OpenAI-GPT--4o--mini](https://img.shields.io/badge/AI-GPT--4o--mini-green)](https://openai.com/)
 
-**VoltCheck AI** is an intelligent battery container inspection system designed to bridge the gap between field hardware testing and digital record-keeping. It automates the extraction of serial numbers and test results from field photos using Computer Vision.
+**SerialSense AI** is an intelligent battery container inspection system designed to bridge the gap between field hardware testing and digital record-keeping. It automates the extraction of serial numbers and test results from field photos using Computer Vision.
 
 ## 📖 The Problem
 
@@ -16,7 +16,7 @@ In industrial settings, inspectors often manually relay container data to manage
 
 ## 🚀 The Solution
 
-VoltCheck AI allows inspectors to simply snap a photo and send it. The application:
+SerialSense AI allows inspectors to simply snap a photo and send it. The application:
 
 1.  **Ingests** the image via a messaging gateway (Twilio).
 2.  **Analyzes** the image using **GPT-4o-mini** to extract the Serial Number and Pass/Fail status.
@@ -57,8 +57,8 @@ VoltCheck AI allows inspectors to simply snap a photo and send it. The applicati
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/VoltCheck-AI.git
-   cd VoltCheck-AI
+   git clone https://github.com/YOUR_USERNAME/SerialSense.git
+   cd SerialSense-AI
    ```
 2. Install dependencies:
    ```bash
