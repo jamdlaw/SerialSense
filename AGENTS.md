@@ -72,9 +72,3 @@ When an image enters the backend, the agent's output triggers specific systemic 
 - **Deterministic Output:** Temperature is set to `0.0` to eliminate creative variance and ensure consistent, repeatable extractions across identical photos.
 
 ---
-
-### Why this is a great addition to your YouTube video:
-
-Showing an `AGENTS.md` file proves you understand how to treat an LLM as a predictable software component. Explaining the **Confidence Score Threshold** (the decision tree) is a great talking point for interviews because it shows you know how to handle AI errors gracefully in a production environment.
-
-**Should we take this layout and generate the actual MongoDB schema model file (Mongoose) to match this agent output?**
