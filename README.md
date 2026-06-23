@@ -27,7 +27,7 @@ SerialSense AI allows inspectors to simply snap a photo and send it. The applica
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React.js (Vite) + Tailwind CSS
+- **Frontend:** React.js (Vite) + Vanilla CSS (Glassmorphism UI)
 - **Backend:** Node.js + Express
 - **Database:** MongoDB Atlas
 - **AI Engine:** OpenAI GPT-4o-mini (Vision)
@@ -37,11 +37,12 @@ SerialSense AI allows inspectors to simply snap a photo and send it. The applica
 
 ## 🏗️ Architecture
 
-1.  **Mobile Intake:** Field inspector sends a photo of a battery container.
+1.  **Mobile Intake:** Field inspector sends a photo of a battery container via Twilio, OR an Admin uploads a photo directly from the web dashboard.
 2.  **AI Extraction:** The backend sends the image to OpenAI with a structured prompt.
-3.  **Validation Logic:** \* If `Serial Number` exists → Append new test date.
-    - If `Serial Number` is new → Create a new record.
-4.  **Web Portal:** The manager views the live feed of inspections and filters by "Fail" status.
+3.  **Validation Logic:** 
+    - If confidence score >= 0.80 and all data is present, the record is saved directly as **Approved**.
+    - If the AI is uncertain, the record is flagged as **Pending Manual Review**.
+4.  **Web Portal:** The manager views the live feed of inspections, inspects flagged photos, and overrides AI data manually via an interactive Image Viewer.
 
 ---
 
@@ -60,20 +61,33 @@ SerialSense AI allows inspectors to simply snap a photo and send it. The applica
    git clone https://github.com/YOUR_USERNAME/SerialSense.git
    cd SerialSense
    ```
-2. Install dependencies:
+
+2. **Backend Setup**:
    ```bash
+   cd backend
    npm install
    ```
-3. Create a `.env` file and add your credentials:
+   Create a `.env` file in the `backend` folder and add your credentials:
    ```env
    OPENAI_API_KEY=your_key_here
    MONGO_URI=your_mongodb_uri
-   TWILIO_AUTH_TOKEN=your_token
+   PORT=5001
    ```
-4. Run the development server:
+   Start the backend server:
    ```bash
    npm run dev
    ```
+
+3. **Frontend Setup**:
+   Open a new terminal window and run:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. **Test the App**:
+   Navigate to `http://localhost:5173` in your browser. Click **"Upload Photo"** to submit a battery container image and watch the AI process it in real-time!
 
 ---
 
@@ -85,8 +99,4 @@ _This project was built as part of a technical deep-dive for my YouTube channel 
 
 ---
 
-### Pro-Tip for your Video:
 
-When you show this README on screen, highlight the **Architecture** section. Recruiters love seeing that you understand how data flows from a phone to a database, not just how to write a single function.
-
-**Would you like to move on to creating the MongoDB Schema to define those "Records" mentioned in the README?**
