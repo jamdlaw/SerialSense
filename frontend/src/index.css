@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #0b0c10;
+  --bg-surface: #15161c;
+  --bg-surface-hover: #1e2029;
+  --border: #262936;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #8b5cf6;
+  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.btn {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-family);
+}
+
+.btn:hover {
+  background: var(--border);
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+  transform: translateY(-1px);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.pass { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+.badge.fail { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+.badge.pending_review { background: rgba(245, 158, 11, 0.15); color: var(--warning); }
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  height: 70px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: rgba(11, 12, 16, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  height: calc(100vh - 70px);
+}
+
+/* Table Styles */
+.table-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.table-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background: var(--bg-surface-hover);
+}
+
+.table-row.active {
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid var(--accent-color);
+}
+
+.row-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.row-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Image Viewer */
+.viewer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.image-display {
+  flex: 1;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.image-display img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.image-display img:hover {
+  transform: scale(1.05);
+}
+
+/* Override Form */
+.override-form {
+  padding: 24px;
+  background: var(--bg-surface);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.select-control {
+  appearance: none;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
